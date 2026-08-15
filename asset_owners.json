@@ -1,0 +1,7 @@
+{
+  "login.php": "backend-owner",
+  "search.php": "backend-owner",
+  "home.php": "frontend-owner",
+  "10.0.0.5": "infra-owner",
+  "default": "security-team-lead"
+}

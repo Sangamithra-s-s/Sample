@@ -1,0 +1,62 @@
+[
+  {
+    "id": "f-0001",
+    "title": "SQL Injection in /login",
+    "description": "Unsanitized input allows SQL injection via the username field.",
+    "asset": "login.php",
+    "location": "login.php:45",
+    "cve_id": "CVE-2024-12345",
+    "cvss_score": 9.1,
+    "epss_score": 0.87,
+    "kev_flag": true,
+    "risk_score": 92,
+    "risk_tier": "critical",
+    "source_scanners": ["zap", "nuclei"],
+    "remediation": "Use parameterized queries instead of string concatenation."
+  },
+  {
+    "id": "f-0002",
+    "title": "Reflected XSS on search page",
+    "description": "User input in the search query parameter is reflected without sanitization, allowing script injection.",
+    "asset": "search.php",
+    "location": "search.php:22",
+    "cve_id": null,
+    "cvss_score": 6.5,
+    "epss_score": 0.12,
+    "kev_flag": false,
+    "risk_score": 58,
+    "risk_tier": "medium",
+    "source_scanners": ["zap"],
+    "remediation": "Encode all user-supplied output before rendering it in the page."
+  },
+  {
+    "id": "f-0003",
+    "title": "Outdated OpenSSH version with known RCE",
+    "description": "Detected OpenSSH version matches a publicly known remote code execution vulnerability.",
+    "asset": "10.0.0.5",
+    "location": "port 22/tcp",
+    "cve_id": "CVE-2023-98765",
+    "cvss_score": 8.8,
+    "epss_score": 0.63,
+    "kev_flag": true,
+    "risk_score": 85,
+    "risk_tier": "critical",
+    "source_scanners": ["nmap", "nuclei"],
+    "remediation": "Upgrade OpenSSH to the latest patched version."
+  },
+  {
+    "id": "f-0004",
+    "title": "Missing security headers",
+    "description": "Response is missing Content-Security-Policy and X-Frame-Options headers.",
+    "asset": "home.php",
+    "location": "home.php",
+    "cve_id": null,
+    "cvss_score": 3.1,
+    "epss_score": 0.01,
+    "kev_flag": false,
+    "risk_score": 25,
+    "risk_tier": "low",
+    "source_scanners": ["zap"],
+    "remediation": "Add recommended security headers to all HTTP responses."
+  }
+]
